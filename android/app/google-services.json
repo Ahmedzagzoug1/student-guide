@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "484196533426",
+    "project_id": "studentguide-fd173",
+    "storage_bucket": "studentguide-fd173.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484196533426:android:2996c41d05233fd6b435ab",
+        "android_client_info": {
+          "package_name": "com.example.student_guide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484196533426-36rvkojakqsrmmrbgsgm9s93vvrrd1v3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsMUE8iFXuaZebDnIT0mSzMLeLPysV5F8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484196533426-36rvkojakqsrmmrbgsgm9s93vvrrd1v3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
