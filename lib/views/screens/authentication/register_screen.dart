@@ -124,7 +124,7 @@ class RegisterScreen extends StatelessWidget {
                           );
 
                        String uid = user !.uid;
-                          DatabaseService(uid).updateUserinformation(firstName, lastName,year, email, 'null');
+                          DatabaseService(uid).updateUserinformation(firstName, lastName,year, email);
 
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(

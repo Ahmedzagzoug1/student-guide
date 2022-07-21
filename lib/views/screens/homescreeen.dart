@@ -17,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentScreenIndex = 0;
   List screens = [CourseScreen(), NewsScreen(), SettingScreen()];
+
   @override
   Widget build(BuildContext context) {
     return Container(
