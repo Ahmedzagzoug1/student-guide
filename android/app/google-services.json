@@ -12,12 +12,7 @@
           "package_name": "com.example.student_guide"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "484196533426-36rvkojakqsrmmrbgsgm9s93vvrrd1v3.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
           "current_key": "AIzaSyBsMUE8iFXuaZebDnIT0mSzMLeLPysV5F8"
@@ -25,12 +20,7 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "484196533426-36rvkojakqsrmmrbgsgm9s93vvrrd1v3.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

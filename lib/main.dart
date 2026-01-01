@@ -2,6 +2,7 @@
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:student_guide/services/message_service.dart';
 import 'package:student_guide/views/screens/authentication/login_screen.dart';
 import 'package:student_guide/views/screens/authentication/register_screen.dart';
 import 'package:student_guide/views/screens/classes_screen.dart';
@@ -13,10 +14,15 @@ import 'package:student_guide/control/news_providers.dart';
 import 'package:student_guide/control/settings_providers.dart';
 import 'package:student_guide/views/screens/coursse_detail_screen.dart';
 import 'package:student_guide/views/screens/coursse_detail_screen.dart';
+
+import 'firebase_options.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-
+  await   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+initMessaging();
 
   runApp(MultiProvider(
     providers: [
@@ -66,3 +72,22 @@ class MyApp extends StatelessWidget {
   }
 }
 
+initMessaging()async{
+  await FirebaseMessagingService.init();
+
+  FirebaseMessagingService.onForegroundMessage = (message) {
+    print('Foreground: ${message.notification?.title}');
+  };
+
+  FirebaseMessagingService.onMessageOpenedApp = (message) {
+    print('Opened App: ${message.data}');
+  };
+
+  FirebaseMessagingService.onBackgroundMessage = (message) {
+    print('Terminated / Background: ${message.data}');
+  };
+
+  FirebaseMessagingService.onToken = (token) {
+    print('Send token to backend: $token');
+  };
+}
