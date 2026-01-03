@@ -1,12 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:student_guide/models/constants.dart';
-import 'package:student_guide/resources/app_validators.dart';
-import 'package:student_guide/services/auth.dart';
-import 'package:student_guide/views/screens/authentication/register_screen.dart';
+import 'package:student_guide/features/auth/view/screens/register_screen.dart';
+
 import 'package:student_guide/features/auth/view/widgets/custom_text_form_field.dart';
 
-import '../../../../views/screens/home/homescreeen.dart';
+import '../../../../core/resources/app_validators.dart';
+import '../../../home/view/screens/home_screen.dart';
+
 
 class LoginScreen extends StatefulWidget {
   static const String routeName = 'loginScreen';
@@ -20,12 +20,11 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController _passwordController = TextEditingController();
 
   var formKey = GlobalKey<FormState>();
-  var authService = AuthServices();
+//  var authService = AuthServices();
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: Constants.decoration,
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(onPressed: () {
@@ -64,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
       if (formKey.currentState?.validate() == true) {
         try {
 
-          await authService.signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
+       //   await authService.signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
 
           Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => HomeScreen()));

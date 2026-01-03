@@ -3,25 +3,27 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:student_guide/resources/theme_manager.dart';
-import 'package:student_guide/services/message_service.dart';
+
 import 'package:student_guide/features/auth/view/screens/login_screen.dart';
-import 'package:student_guide/views/screens/authentication/register_screen.dart';
 import 'package:student_guide/features/books/view/screens/classes_screen.dart';
-import 'package:student_guide/views/screens/files_screen.dart';
-import 'package:student_guide/views/screens/home/homescreeen.dart';
+
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 import 'package:student_guide/features/home/controller/news_providers.dart';
-import 'package:student_guide/control/settings_providers.dart';
-import 'package:student_guide/views/screens/coursse_detail_screen.dart';
-import 'package:student_guide/views/screens/coursse_detail_screen.dart';
 
+
+import 'core/resources/theme_manager.dart';
+import 'core/services/message_service.dart';
+import 'features/auth/view/screens/register_screen.dart';
+import 'features/books/view/screens/coursse_detail_screen.dart';
+import 'features/home/controller/settings_providers.dart';
+import 'features/home/view/screens/home_screen.dart';
 import 'firebase_options.dart';
 void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load();
+ await WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

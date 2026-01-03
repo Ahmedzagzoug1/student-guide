@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:student_guide/views/screens/home/homescreeen.dart';
+
+import '../../features/home/view/screens/home_screen.dart';
 
 class ClassCard extends StatelessWidget {
   String className;

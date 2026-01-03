@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -46,30 +47,29 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB2QZzALJ8-hh8b4TBLEOIwehh59sBkjMY',
-    appId: '1:484196533426:web:d693748a8ca8d863b435ab',
-    messagingSenderId: '484196533426',
-    projectId: 'studentguide-fd173',
-    authDomain: 'studentguide-fd173.firebaseapp.com',
-    storageBucket: 'studentguide-fd173.appspot.com',
-    measurementId: 'G-LHYFNT9V7D',
+  static  FirebaseOptions ios = FirebaseOptions(
+    apiKey:dotenv.env['IOS_API_KEY']!,
+    appId:dotenv.env['IOS_APP_ID']!,
+    messagingSenderId: dotenv.env['IOS_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['IOS_PROJECT_ID']!,
+    storageBucket: dotenv.env['IOS_STORAGE_BUCKET']!,
+        iosBundleId:dotenv.env['IOS_BUNDLE_ID']!,
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBsMUE8iFXuaZebDnIT0mSzMLeLPysV5F8',
-    appId: '1:484196533426:android:2996c41d05233fd6b435ab',
-    messagingSenderId: '484196533426',
-    projectId: 'studentguide-fd173',
-    storageBucket: 'studentguide-fd173.appspot.com',
+  static final FirebaseOptions android = FirebaseOptions(
+    apiKey:dotenv.env['ANDROID_API_KEY']!,
+    appId: dotenv.env['ANDROID_APP_ID']!,
+    messagingSenderId:dotenv.env['ANDROID_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['ANDROID_PROJECT_ID']!,
+    storageBucket:dotenv.env['ANDROID_STORAGE_BUCKET']!,
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDPkDViCO1eXcPGE5bstds3rZ62A9NXegs',
-    appId: '1:484196533426:ios:fadded09d58f2caab435ab',
-    messagingSenderId: '484196533426',
-    projectId: 'studentguide-fd173',
-    storageBucket: 'studentguide-fd173.appspot.com',
-    iosBundleId: 'com.example.studentGuide',
+  static  FirebaseOptions web = FirebaseOptions(
+    apiKey: dotenv.env['WEB_API_KEY']!,
+    appId: dotenv.env['WEB_APP_ID']!,
+    messagingSenderId: dotenv.env['WEB_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['WEB_PROJECT_ID']!,
+    storageBucket: dotenv.env['WEB_STORAGE_BUCKET']!,
+    authDomain:dotenv.env['WEB_AUTH_DOMAIN']!
   );
 }

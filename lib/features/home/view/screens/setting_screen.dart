@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:student_guide/control/settings_providers.dart';
 import 'package:student_guide/views/widgets/dropdown_option.dart';
 import 'package:student_guide/features/home/view/widgets/settings_label.dart';
 import 'package:provider/provider.dart';
+
+import '../../controller/settings_providers.dart';
 
 class SettingScreen extends StatelessWidget {
   @override

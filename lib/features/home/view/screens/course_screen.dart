@@ -2,14 +2,13 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:student_guide/services/auth.dart';
-import 'package:student_guide/services/database.dart';
-import 'package:student_guide/views/widgets/Category_Item.dart';
-import 'package:student_guide/views/widgets/category_screen_title.dart';
+
 import 'package:student_guide/features/home/view/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../views/widgets/loading.dart';
+import '../../../books/view/screens/category_screen_title.dart';
+import '../widgets/category_Item.dart';
 
 class CourseScreen extends StatefulWidget {
   static const routeName = 'news';
@@ -29,14 +28,14 @@ class CourseScreenState extends State{
 
 
   getYear() async {
-    var uid = AuthServices().auth.currentUser!.uid;
+  //  var uid = AuthServices().auth.currentUser!.uid;
 
-    var databaseService = DatabaseService(uid);
+ /*   var databaseService = DatabaseService(uid);
     await databaseService.usersReference.doc(uid).get()
         .then((value) {
       yearnum = value.get('year').toString();
       print(value.get('year').toString());
-    });
+    });*/
     Future.delayed(const Duration(seconds: 10),);
     setState(() {
       loadingSources=false;
@@ -50,7 +49,6 @@ class CourseScreenState extends State{
     getYear();
 
 
-    // TODO: implement initState
     super.initState();
   }
   @override

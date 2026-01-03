@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:student_guide/features/home/controller/news_providers.dart';
-import 'package:student_guide/models/news_api_manger.dart';
-import 'package:student_guide/models/source.dart';
+
+
+import '../../model/source.dart';
 class SourceItem extends StatelessWidget {
   final Source source;
   const SourceItem(this.source, {Key? key}) : super(key: key);

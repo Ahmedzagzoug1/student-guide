@@ -2,9 +2,10 @@ import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:student_guide/services/cloud.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
-import 'package:student_guide/views/screens/pdfviewer.dart';
+import 'package:student_guide/features/books/view/screens/pdfviewer.dart';
+
+import '../../../../core/services/cloud.dart';
 class FilesScreen extends StatefulWidget {
   static const String routeName = 'files';
   final   String  title;

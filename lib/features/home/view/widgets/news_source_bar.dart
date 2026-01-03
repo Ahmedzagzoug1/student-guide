@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:student_guide/models/source.dart';
-import 'package:student_guide/views/widgets/news_source_item.dart';
+
+import '../../model/source.dart';
+import 'news_source_item.dart';
+
 
 class SourceBar extends StatelessWidget {
   const SourceBar(this.sources, {Key? key}) : super(key: key);

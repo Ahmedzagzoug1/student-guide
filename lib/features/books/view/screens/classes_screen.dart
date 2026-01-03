@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:student_guide/views/widgets/constants.dart';
-import 'package:student_guide/views/widgets/Category_Item.dart';
 import 'package:student_guide/views/widgets/class_card_widget.dart';
 
 class ClassesScreen extends StatelessWidget {
