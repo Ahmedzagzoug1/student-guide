@@ -15,7 +15,7 @@ class CategoryScreenTitle extends StatelessWidget {
           style: textStyle,
         ),
         Text(
-          'of intersts ',
+          'of interests ',
           style: textStyle,
         ),
       ],

@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:student_guide/models/user.dart';
-import 'package:student_guide/services/database.dart';
 
 class AuthServices{
   final FirebaseAuth auth=FirebaseAuth.instance;

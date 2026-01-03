@@ -1,8 +1,12 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:student_guide/models/constants.dart';
+import 'package:student_guide/resources/app_validators.dart';
 import 'package:student_guide/services/auth.dart';
 import 'package:student_guide/views/screens/authentication/register_screen.dart';
-import 'package:student_guide/views/screens/homescreeen.dart';
+import 'package:student_guide/features/auth/view/widgets/custom_text_form_field.dart';
+
+import '../../../../views/screens/home/homescreeen.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String routeName = 'loginScreen';
@@ -12,9 +16,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  String email = '';
-
-  String password = '';
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
   var formKey = GlobalKey<FormState>();
   var authService = AuthServices();
@@ -25,8 +28,12 @@ class _LoginScreenState extends State<LoginScreen> {
       decoration: Constants.decoration,
       child: Scaffold(
         appBar: AppBar(
-          leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
-          title: Text('Login'),
+          leading: IconButton(onPressed: () {
+            Navigator.pop(context);
+          }, icon: Icon(Icons.arrow_back)),
+          title: Text('Login'.tr() , style: TextStyle(
+
+          ),),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -34,50 +41,30 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Form(
               key: formKey,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
                     height: MediaQuery.of(context).size.height * .25,
                   ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      label: Text('Email'),
-                    ),
-                    onChanged: (text) {
-                      email = text;
-                    },
-                    validator: (text) {
-                      if (text == null || text.trim().isEmpty) {
-                        return 'pls enter Youe Email';
-                      }
-                      /* if (!isValidEmail(email)) {
-                        return 'please Enter a Valid Email ';
-                      } */
-                      return null;
-                    },
+                  CustomTextFormField(controller:_emailController , label: "Email".tr(),
+
+                  validator:AppValidators.email,
+                  prefixIcon: Icon(Icons.email_outlined),
                   ),
-                  TextFormField(
-                      decoration: InputDecoration(
-                        label: Text('Password'),
-                      ),
-                      onChanged: (text) {
-                        password = text;
-                      },
-                      validator: (text) {
-                        if (text == null || text.trim().isEmpty) {
-                          return 'pls enter Password';
-                        }
-                        if (text.length < 6) {
-                          return 'Password should be at least 6 charcters ';
-                        }
-                        return null;
-                      }),
+                  SizedBox(height: 40,),
+                  CustomTextFormField(controller:_passwordController , label: "Password".tr(),
+                    validator:AppValidators.password,
+                    obscureText: true,
+                    prefixIcon: Icon(Icons.password),
+                  ),
+
                   ElevatedButton(
                       onPressed: () async{
       if (formKey.currentState?.validate() == true) {
         try {
-          await authService.signInWithEmailAndPassword(email: email, password: password);
+
+          await authService.signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
 
           Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => HomeScreen()));
@@ -96,15 +83,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Sign in'),
+                              Text('login'.tr()),
                               Icon(Icons.arrow_forward)
                             ]),
                       )),
-                  TextButton(
-                      onPressed: () {
+                  InkWell(
+                      onTap: () {
                         Navigator.pushNamed(context, RegisterScreen.routeName);
                       },
-                      child: Text('Or Create Account'))
+                      child: Text('orCreateAccount'.tr()))
                 ],
               ),
             ),

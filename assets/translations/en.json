@@ -1,0 +1,28 @@
+{
+  "email":"Email",
+  "password":"Password",
+  "firstName": "First Name",
+  "secondName": "Second Name",
+  "login":"Login",
+  "register" : "Register",
+  "orCreateAccount":"Or Create Account",
+  "orYouHaveAnAccountLogin": "Or You Have An Account Login",
+  "enterYourYear": "Enter your year",
+  "1": "First",
+  "2": "Second",
+  "3": "Third",
+  "4": "Forth",
+  "createAccount":"Create an Account",
+  "nameRequired": "Name is required",
+  "nameTooShort": "Name must be at least 3 characters",
+  "nameInvalid": "Name must contain letters only",
+
+  "emailRequired": "Email is required",
+  "emailInvalid": "Invalid email address",
+
+  "passwordRequired": "Password is required",
+  "passwordTooShort": "Password must be at least 8 characters",
+  "passwordUppercase": "Password must contain an uppercase letter",
+  "passwordLowercase": "Password must contain a lowercase letter",
+  "passwordNumber": "Password must contain a number"
+}

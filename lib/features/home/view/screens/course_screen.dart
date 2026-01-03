@@ -6,10 +6,10 @@ import 'package:student_guide/services/auth.dart';
 import 'package:student_guide/services/database.dart';
 import 'package:student_guide/views/widgets/Category_Item.dart';
 import 'package:student_guide/views/widgets/category_screen_title.dart';
-import 'package:student_guide/views/widgets/drawer.dart';
+import 'package:student_guide/features/home/view/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/loading.dart';
+import '../../../../views/widgets/loading.dart';
 
 class CourseScreen extends StatefulWidget {
   static const routeName = 'news';

@@ -1,5 +1,5 @@
-import 'package:dio/dio.dart';
-import 'package:student_guide/models/source.dart';
+import
+'package:dio/dio.dart';
 
 class NewsApiManger {
   static const String _apiKey = '4562a9fcacfc4c2ea55f1b39a204282c';

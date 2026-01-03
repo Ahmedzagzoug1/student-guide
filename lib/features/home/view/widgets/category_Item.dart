@@ -1,4 +1,4 @@
-import 'package:student_guide/views/screens/course_screen.dart';
+import 'package:student_guide/features/home/view/screens/course_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:student_guide/views/screens/files_screen.dart';
 

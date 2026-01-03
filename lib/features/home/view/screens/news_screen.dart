@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:student_guide/control/news_providers.dart';
-import 'package:student_guide/models/articles.dart';
+import 'package:student_guide/features/home/controller/news_providers.dart';
+import 'package:student_guide/features/home/model/articles.dart';
 import 'package:student_guide/models/source.dart';
 import 'package:student_guide/views/widgets/news_item.dart';
 import 'package:student_guide/views/widgets/news_source_bar.dart';

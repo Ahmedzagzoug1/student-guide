@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:student_guide/models/articles.dart';
+import 'package:student_guide/features/home/model/articles.dart';
 import 'package:timeago_flutter/timeago_flutter.dart' as timeago;
 
 class NewsItem extends StatelessWidget {

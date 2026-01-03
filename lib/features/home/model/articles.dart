@@ -1,4 +1,5 @@
-import 'package:student_guide/models/source.dart';
+
+import 'package:student_guide/features/home/model/source.dart';
 
 class Article {
   final Source source;

@@ -1,10 +1,10 @@
 import 'package:student_guide/models/constants.dart';
-import 'package:student_guide/views/screens/course_screen.dart';
-import 'package:student_guide/views/screens/news_screen.dart';
-import 'package:student_guide/views/screens/setting_screen.dart';
+import 'package:student_guide/features/home/view/screens/course_screen.dart';
+import 'package:student_guide/features/home/view/screens/news_screen.dart';
+import 'package:student_guide/views/screens/home/setting_screen.dart';
 import 'package:student_guide/views/widgets/Category_Item.dart';
 import 'package:student_guide/views/widgets/category_screen_title.dart';
-import 'package:student_guide/views/widgets/drawer.dart';
+import 'package:student_guide/features/home/view/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

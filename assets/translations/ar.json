@@ -1,0 +1,28 @@
+{
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "firstName": "الاسم الأول",
+  "secondName": "الاسم الثاني",
+  "login": "تسجيل الدخول",
+  "register": "إنشاء حساب",
+  "orCreateAccount": "أو إنشاء حساب",
+  "orYouHaveAnAccountLogin": "هل لديك حساب بالفعل؟ تسجيل الدخول",
+  "enterYourYear": "اختر السنة",
+  "1": "الأولى",
+  "2": "الثانية",
+  "3": "الثالثة",
+  "4": "الرابعة",
+  "createAccount": "إنشاء حساب",
+  "nameRequired": "الاسم مطلوب",
+  "nameTooShort": "يجب ألا يقل الاسم عن 3 أحرف",
+  "nameInvalid": "يجب أن يحتوي الاسم على حروف فقط",
+
+  "emailRequired": "البريد الإلكتروني مطلوب",
+  "emailInvalid": "عنوان البريد الإلكتروني غير صالح",
+
+  "passwordRequired": "كلمة المرور مطلوبة",
+  "passwordTooShort": "يجب ألا تقل كلمة المرور عن 8 أحرف",
+  "passwordUppercase": "يجب أن تحتوي كلمة المرور على حرف كبير",
+  "passwordLowercase": "يجب أن تحتوي كلمة المرور على حرف صغير",
+  "passwordNumber": "يجب أن تحتوي كلمة المرور على رقم"
+}
