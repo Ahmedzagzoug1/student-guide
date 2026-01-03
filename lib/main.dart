@@ -16,6 +16,7 @@ import 'package:student_guide/features/home/controller/news_providers.dart';
 
 import 'core/resources/theme_manager.dart';
 import 'core/services/message_service.dart';
+import 'features/auth/controller/auth_controller.dart';
 import 'features/auth/view/screens/register_screen.dart';
 import 'features/books/view/screens/coursse_detail_screen.dart';
 import 'features/home/controller/settings_providers.dart';
@@ -43,6 +44,8 @@ initMessaging();
     providers: [
       ChangeNotifierProvider<SettingsProvider>(
           create: (context) => SettingsProvider()),
+      ChangeNotifierProvider<AuthController>(
+          create: (context) => AuthController()),
       ChangeNotifierProvider<NewsProvider>(create: (context) => NewsProvider()),
     ],
    child:  MyApp(),
@@ -68,7 +71,17 @@ class MyApp extends StatelessWidget {
        theme: AppTheme.lightTheme,
        darkTheme: AppTheme.darkTheme,
       themeMode: Provider.of<SettingsProvider>(context).mode,
-      home: LoginScreen(),
+      home: Consumer<AuthController>(
+        builder: (context, auth, child) {
+          if (auth.status == Status.loading) {
+            return CircularProgressIndicator();
+          } else if (auth.status == Status.success && auth.currentUser != null) {
+            return HomeScreen();
+          } else {
+            return RegisterScreen();
+          }
+        },
+      ),
       routes: {
         ClassesScreen.routName: (context) => ClassesScreen(),
         LoginScreen.routeName: (context) => LoginScreen(),
@@ -80,6 +93,8 @@ class MyApp extends StatelessWidget {
 
   }
 }
+
+
 
 initMessaging()async{
   await FirebaseMessagingService.init();
