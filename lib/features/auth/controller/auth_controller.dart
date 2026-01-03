@@ -42,7 +42,7 @@ class AuthController with ChangeNotifier{
    notifyListeners();
 
    try {
-   final user=await _authServices.createUserWithEmailAndPassword(email: email, password: password);
+   await _authServices.createUserWithEmailAndPassword(email: email, password: password);
   await  _databaseService.addUser(firstName, lastName, year, email);
     status=Status.success;
    notifyListeners();
