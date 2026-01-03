@@ -4,7 +4,6 @@ import 'package:student_guide/features/home/model/source.dart';
 class Article {
   final Source source;
 
-  //To-do:-
   final String imageurl;
   final String content;
   final String url;
